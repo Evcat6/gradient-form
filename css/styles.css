@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --card-height: 50vh;
+    --card-width: 50vh;
+  }
+
+body {
+    background: #212534;
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.form {
+    background-color: #191c29;
+    width: var(--card-width);
+    height: var(--card-height) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3px;
+  position: relative;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 1.5em;
+  color: rgb(88 199 250 / 0%);
+  cursor: pointer;
+  font-family: cursive;
+}
+
+label {
+    margin: 20px;
+    letter-spacing: 2px;
+    color: #fff;
+    transition: 0.5s ease-in;
+}
+
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #fff;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #fff;
+  }
+  
+
+.btn {
+    color: #fff;
+    font-size: 20px;
+    text-decoration:none;
+    margin-top: 20px;
+    background-color: #3c67e3;
+    padding: 15px 40px;
+    transition: 0.5s ease-in;
+    border-radius: 3px;
+}
+
+.btn:hover {
+    background-color:#5ddcff;
+}
+
+input {
+    background-color: rgb(20, 20, 20);
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 80%;
+    border-radius: 4px;
+    height: 40px;
+    color: #fff;
+}
+
+
+.form::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      position: absolute;
+      z-index: -1;
+      top: -1%;
+      left: -2%;
+      animation: spin 2.5s linear infinite;
+  }
+
+.form::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5dffbc, #3c67e3 43%, #4e00c2);
+      opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+.form:hover {
+    color: rgb(88 199 250 / 100%);
+    transition: color 1s;
+  }
+.form:hover:before, .card:hover:after {
+    animation: none;
+    opacity: 0;
+  }
+
+
+@keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+

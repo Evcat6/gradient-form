@@ -1,0 +1,1 @@
+$(".label").attr("show","label");
