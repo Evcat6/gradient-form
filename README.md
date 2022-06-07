@@ -4,4 +4,4 @@ gradient-form
 
 
 Codepen link:
-codepen.io/Evcat/pen/bGLxYRY
+https://codepen.io/Evcat/pen/bGLxYRY
