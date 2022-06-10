@@ -97,6 +97,10 @@ input {
     color: #fff;
 }
 
+input:focus{
+  outline:none;
+}
+
 
 .form::before {
     content: "";
